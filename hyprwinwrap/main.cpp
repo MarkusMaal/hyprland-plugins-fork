@@ -46,12 +46,12 @@ void onNewWindow(PHLWINDOW pWindow) {
     if (!pWindow->m_bIsFloating)
         g_pLayoutManager->getCurrentLayout()->changeWindowFloatingMode(pWindow);
 
-    pWindow->m_vRealSize->setValueAndWarp(PMONITOR->vecSize);
-    pWindow->m_vRealPosition->setValueAndWarp(PMONITOR->vecPosition);
-    pWindow->m_vSize     = PMONITOR->vecSize;
-    pWindow->m_vPosition = PMONITOR->vecPosition;
-    pWindow->m_bPinned   = true;
-    pWindow->sendWindowSize(true);
+    //pWindow->m_vRealSize->setValueAndWarp(PMONITOR->vecSize);
+    //pWindow->m_vRealPosition->setValueAndWarp(PMONITOR->vecPosition);
+    //pWindow->m_vSize     = PMONITOR->vecSize;
+    //pWindow->m_vPosition = PMONITOR->vecPosition;
+    //pWindow->m_bPinned   = true;
+    //pWindow->sendWindowSize(true);
 
     bgWindows.push_back(pWindow);
 
@@ -128,7 +128,7 @@ void onCommit(void* owner, void* data) {
 
 void onConfigReloaded() {
     static auto* const PCLASS = (Hyprlang::STRING const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:hyprwinwrap:class")->getDataStaticPtr();
-    g_pConfigManager->parseKeyword("windowrulev2", std::string{"float, class:^("} + *PCLASS + ")$");
+    //g_pConfigManager->parseKeyword("windowrulev2", std::string{"float, class:^("} + *PCLASS + ")$");
     //g_pConfigManager->parseKeyword("windowrulev2", std::string{"size 100\% 100\%, class:^("} + *PCLASS + ")$");
 }
 
